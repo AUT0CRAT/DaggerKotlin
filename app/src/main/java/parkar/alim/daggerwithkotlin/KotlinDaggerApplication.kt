@@ -6,16 +6,16 @@ import android.content.Context
 import javax.inject.Inject
 
 import parkar.alim.daggerwithkotlin.components.ApplicationComponent
+import parkar.alim.daggerwithkotlin.components.DaggerApplicationComponent
 import parkar.alim.daggerwithkotlin.managers.DataManager
 import parkar.alim.daggerwithkotlin.modules.ApplicationModule
 
 class KotlinDaggerApplication : Application() {
 
-    var component: ApplicationComponent
-        protected set
+    lateinit var component: ApplicationComponent
 
     @Inject
-    internal var dataManager: DataManager? = null
+    lateinit public var dataManager: DataManager
 
     override fun onCreate() {
         super.onCreate()
@@ -26,6 +26,7 @@ class KotlinDaggerApplication : Application() {
         component.inject(this)
     }
 
+    //public static methods in java
     companion object {
 
         operator fun get(context: Context): KotlinDaggerApplication {

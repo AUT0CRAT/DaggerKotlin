@@ -12,12 +12,12 @@ class ActivityModule(private val mActivity: Activity) {
 
     @Provides
     @ActivityContext
-    internal fun provideContext(): Context {
+    fun provideContext(): Context {
         return mActivity
     }
 
     @Provides
-    internal fun provideActivity(): Activity {
+    fun provideActivity(): Activity {
         return mActivity
     }
 }

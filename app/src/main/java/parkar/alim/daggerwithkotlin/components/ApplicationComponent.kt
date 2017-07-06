@@ -17,17 +17,17 @@ import javax.inject.Singleton
 @Component(modules = arrayOf(ApplicationModule::class))
 interface ApplicationComponent {
 
-    fun inject(demoApplication: KotlinDaggerApplication)
+    fun inject(demoApplication: Application)
 
     @ApplicationContext
-    val context: Context
+    fun getContext() : Context
 
-    val application: Application
+    fun getApplication(): Application
 
-    val dataManager: DataManager
+    fun getDataManager(): DataManager
 
-    val preferenceHelper: PreferenceHelper
+    fun getPreferenceHelper(): PreferenceHelper
 
-    val dbHelper: DBHelper
+    fun getDbHelper(): DBHelper
 
 }

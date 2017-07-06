@@ -14,29 +14,29 @@ class ApplicationModule(private val mApplication: Application) {
 
     @Provides
     @ApplicationContext
-    internal fun provideContext(): Context {
+    fun provideContext(): Context {
         return mApplication
     }
 
     @Provides
-    internal fun provideApplication(): Application {
+    fun provideApplication(): Application {
         return mApplication
     }
 
     @Provides
     @DatabaseInfo
-    internal fun provideDatabaseName(): String {
+    fun provideDatabaseName(): String {
         return "demo-dagger.db"
     }
 
     @Provides
     @DatabaseInfo
-    internal fun provideDatabaseVersion(): Int {
+    fun provideDatabaseVersion(): Int {
         return 2
     }
 
     @Provides
-    internal fun provideSharedPrefs(): SharedPreferences {
+    fun provideSharedPrefs(): SharedPreferences {
         return mApplication.getSharedPreferences("demo-prefs", Context.MODE_PRIVATE)
     }
 }
